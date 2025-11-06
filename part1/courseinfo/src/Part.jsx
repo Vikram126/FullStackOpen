@@ -1,11 +1,11 @@
 const Part = (props) =>
 {
-    return
-    (
+    return (
         <div>
-            
+            {props.data.name} {props.data.exercises}
         </div>
     )
+
 }
 
 export default Part;
