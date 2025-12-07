@@ -39,12 +39,6 @@ if (good==0 && bad==0 && neutral == 0)
         </tbody>
       
       </table>
-
-
-
-
-
-      
     </div>
       
   )
