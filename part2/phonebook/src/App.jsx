@@ -42,6 +42,28 @@ const DisplayPhonebook = ({persons,showall,searchName}) =>{
 }
 
 
+const PersonForm = ({handleSubmit,newName,newNumber,setNewName,setNewnumber}) =>
+{
+
+  return (
+    <div>
+      <form onSubmit={handleSubmit}>
+        <div>
+          Name: <input placeholder='Enter Name' value={newName} onChange={(e)=>setNewName(e.target.value)}/>
+        </div>
+        <div>
+          Phone: <input placeholder='Enter Number' value={newNumber} onChange={(e)=>setNewnumber(e.target.value)}/>
+        </div>
+        <div>
+          <button type="submit">add</button>
+        </div>
+      </form>
+    </div>
+
+  )
+
+}
+
 
 const App = () => {
   const [persons, setPersons] = useState([
@@ -74,17 +96,7 @@ const App = () => {
     <div>
       <SearchField setShowall={setShowall} setSearchName={setSearchName}/>
       <h2>Add a new</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          Name: <input placeholder='Enter Name' value={newName} onChange={(e)=>setNewName(e.target.value)}/>
-        </div>
-        <div>
-          Phone: <input placeholder='Enter Number' value={newNumber} onChange={(e)=>setNewnumber(e.target.value)}/>
-        </div>
-        <div>
-          <button type="submit">add</button>
-        </div>
-      </form>
+      <PersonForm handleSubmit={handleSubmit} newName={newName} newNumber={newNumber} setNewName={setNewName} setNewnumber={setNewnumber}/>
       <h2>Numbers</h2>
       <DisplayPhonebook persons={persons} showall={showall} searchName={searchName}/>
       
